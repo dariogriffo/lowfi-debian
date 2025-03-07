@@ -1,0 +1,11 @@
+Source: lowfi
+Section: utils
+Priority: optional
+Maintainer: Dario Griffo <dariogriffo@gmail.com>
+Homepage: https://github.com/talwat/lowfi
+Package: lowfi
+Version: lowfi_VERSION-BUILD_VERSION+DIST
+Architecture: amd64
+Depends: 
+Description: a simple terminal UI for git commands.
+
