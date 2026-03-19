@@ -7,5 +7,5 @@ Package: lowfi
 Version: lowfi_VERSION-BUILD_VERSION+DIST
 Architecture: amd64
 Depends: 
-Description: a simple terminal UI for git commands.
+Description: An extremely simple lofi player.
 
