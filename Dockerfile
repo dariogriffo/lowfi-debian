@@ -16,7 +16,7 @@ ENV RUSTUP_HOME=/usr/local/rustup \
 RUN set -eux; \
     wget "https://static.rust-lang.org/rustup/archive/1.28.1/x86_64-unknown-linux-gnu/rustup-init"; \
     chmod +x rustup-init; \
-    ./rustup-init -y --no-modify-path --profile minimal --default-toolchain 1.87.0 --default-host x86_64-unknown-linux-gnu;
+    ./rustup-init -y --no-modify-path --profile minimal --default-toolchain 1.94.1 --default-host x86_64-unknown-linux-gnu;
 
     
 RUN mkdir -p /output/usr/bin
