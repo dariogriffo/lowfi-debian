@@ -1,0 +1,15 @@
+Source: lowfi
+Section: utils
+Priority: optional
+Maintainer: Dario Griffo <dariogriffo@gmail.com>
+Build-Depends: debhelper-compat (= 13), cargo, rustc, libssl-dev, pkg-config, libasound2-dev
+Standards-Version: 4.6.2
+Homepage: https://github.com/talwat/lowfi
+Rules-Requires-Root: no
+
+Package: lowfi
+Architecture: amd64
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: A simple, lightweight lofi music player written in Rust
+ lowfi is a very simple lofi player that plays lofi music in the terminal.
+ It fetches and plays music directly, providing a minimalist interface.
