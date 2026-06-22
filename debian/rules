@@ -1,17 +1,21 @@
 #!/usr/bin/make -f
 
+LOWFI_VERSION ?= $(shell dpkg-parsechangelog -S Version | cut -d- -f1)
+LOWFI_BINARY = lowfi-linux-x86_64
+
 %:
 	dh $@
 
 override_dh_auto_configure:
 
 override_dh_auto_build:
-	cargo build --release --all-features
+	wget "https://github.com/talwat/lowfi/releases/download/$(LOWFI_VERSION)/$(LOWFI_BINARY)"
+	chmod +x "$(LOWFI_BINARY)"
 
 override_dh_auto_install:
-	install -D -m 755 target/release/lowfi debian/lowfi/usr/bin/lowfi
+	install -D -m 755 $(LOWFI_BINARY) debian/lowfi/usr/bin/lowfi
 
 override_dh_auto_test:
 
 override_dh_auto_clean:
-	cargo clean || true
+	rm -f "$(LOWFI_BINARY)"

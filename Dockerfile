@@ -1,29 +1,18 @@
 ARG DEBIAN_DIST=bookworm
-FROM buildpack-deps:$DEBIAN_DIST
+FROM debian:$DEBIAN_DIST
 
 ARG DEBIAN_DIST
 ARG lowfi_VERSION
 ARG BUILD_VERSION
 ARG FULL_VERSION
+ARG LOWFI_BINARY
 
-RUN apt update && apt install -y wget pkg-config libc-bin libssl-dev libasound2-dev git
-
-ENV RUSTUP_HOME=/usr/local/rustup \
-    CARGO_HOME=/usr/local/cargo \
-    PATH=/usr/local/cargo/bin:$PATH \
-    RUST_VERSION=1.87.0
-
-RUN set -eux; \
-    wget "https://static.rust-lang.org/rustup/archive/1.28.1/x86_64-unknown-linux-gnu/rustup-init"; \
-    chmod +x rustup-init; \
-    ./rustup-init -y --no-modify-path --profile minimal --default-toolchain 1.94.1 --default-host x86_64-unknown-linux-gnu;
-
-    
 RUN mkdir -p /output/usr/bin
 RUN mkdir -p /output/usr/share/doc/lowfi
-RUN git clone https://github.com/talwat/lowfi
-RUN cd lowfi && cargo build --release --all-features && cp ./target/release/lowfi /output/usr/bin/
 RUN mkdir -p /output/DEBIAN
+
+COPY ${LOWFI_BINARY} /output/usr/bin/lowfi
+RUN chmod +x /output/usr/bin/lowfi
 
 COPY output/DEBIAN/control /output/DEBIAN/
 COPY output/copyright /output/usr/share/doc/lowfi/
