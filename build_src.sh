@@ -19,7 +19,7 @@ echo "Creating Debian/Ubuntu source packages for lowfi ${lowfi_VERSION}-${BUILD_
 # Download upstream source tarball (shared .orig.tar.gz across all distributions)
 if [ ! -f "$ORIG_TARBALL" ]; then
     echo "Downloading upstream source from GitHub..."
-    wget -q "https://github.com/talwat/lowfi/archive/refs/tags/v${lowfi_VERSION}.tar.gz" -O "$ORIG_TARBALL"
+    wget -q "https://github.com/talwat/lowfi/archive/refs/tags/${lowfi_VERSION}.tar.gz" -O "$ORIG_TARBALL"
     echo "  ✅ Downloaded $ORIG_TARBALL"
 else
     echo "  ✅ Using existing $ORIG_TARBALL"
