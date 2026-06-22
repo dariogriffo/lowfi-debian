@@ -57,14 +57,14 @@ EOF
 
 echo ""
 echo "Building Debian source packages..."
-DEBIAN_DISTS=("bookworm" "trixie" "sid")
+DEBIAN_DISTS=("bookworm" "trixie" "forky" "sid")
 for dist in "${DEBIAN_DISTS[@]}"; do
     build_source_package "$dist"
 done
 
 echo ""
 echo "Building Ubuntu source packages..."
-UBUNTU_DISTS=("jammy" "noble" "questing")
+UBUNTU_DISTS=("jammy" "noble" "questing" "resolute")
 for dist in "${UBUNTU_DISTS[@]}"; do
     build_source_package "$dist"
 done
