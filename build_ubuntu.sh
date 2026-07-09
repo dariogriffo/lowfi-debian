@@ -10,7 +10,7 @@ declare -a arr=("jammy" "noble" "questing")
 for i in "${arr[@]}"
 do
   UBUNTU_DIST=$i
-  FULL_VERSION=$lowfi_VERSION-${BUILD_VERSION}+${UBUNTU_DIST}_amd64_ubu
+  FULL_VERSION=$lowfi_VERSION-${BUILD_VERSION}~${UBUNTU_DIST}_amd64_ubu
   docker build . -f Dockerfile.ubu -t lowfi-ubuntu-$UBUNTU_DIST \
     --build-arg UBUNTU_DIST=$UBUNTU_DIST \
     --build-arg lowfi_VERSION=$lowfi_VERSION \

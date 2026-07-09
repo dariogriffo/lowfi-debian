@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Dario Griffo <dariogriffo@gmail.com>
 Homepage: https://github.com/talwat/lowfi
 Package: lowfi
-Version: lowfi_VERSION-BUILD_VERSION+DIST
+Version: lowfi_VERSION-BUILD_VERSION~DIST
 Architecture: amd64
 Depends: 
 Description: An extremely simple lofi player.
