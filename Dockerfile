@@ -15,6 +15,8 @@ COPY ${LOWFI_BINARY} /output/usr/bin/lowfi
 RUN chmod +x /output/usr/bin/lowfi
 
 COPY output/DEBIAN/control /output/DEBIAN/
+COPY output/DEBIAN/postinst /output/DEBIAN/postinst
+RUN chmod 755 /output/DEBIAN/postinst
 COPY output/copyright /output/usr/share/doc/lowfi/
 COPY output/changelog.Debian /output/usr/share/doc/lowfi/
 COPY output/README.md /output/usr/share/doc/lowfi/
