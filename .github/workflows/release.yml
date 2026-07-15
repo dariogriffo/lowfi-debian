@@ -23,6 +23,11 @@ jobs:
       - name: Checkout lowfi-debian
         uses: actions/checkout@v4
 
+      - name: Validate upstream license permits paid distribution
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: ./validate_license.sh ${{ inputs.lowfi_version }}
+
       - name: Build lowfi
         run: ./build.sh ${{ inputs.lowfi_version }} ${{ inputs.build_version }}
 
