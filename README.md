@@ -19,10 +19,29 @@
 This repository contains build scripts to produce the _unofficial_ Debian packages
 (.deb) for [lowfi](https://github.com/talwat/lowfi/) hosted at [deb.griffo.io](https://deb.griffo.io)
 
-Currently supported debian distros are:
-- Bookworm
-- Trixie
-- Sid
+Currently supported Debian distros are:
+- Bookworm (v12)
+- Trixie (v13)
+- Forky (v14)
+- Sid (testing)
+
+Currently supported Ubuntu distros are:
+- Jammy (22.04)
+- Noble (24.04)
+- Questing (25.10)
+- Resolute (26.04)
+
+Supported architectures:
+- amd64 (x86_64)
+
+Upstream publishes a Linux binary for x86_64 only, so no other architecture
+is available.
+
+> ⚠️ The current upstream binary is built against glibc 2.38, which is newer
+> than the glibc in Bookworm (2.36) and Jammy (2.35). The package declares
+> that requirement, so apt on those two releases reports it as not
+> installable rather than installing something that cannot start. It works on
+> Trixie, Forky, Sid, Noble, Questing and Resolute.
 
 This is an unofficial community project to provide a package that's easy to
 install on Debian. If you're looking for the lowfi source code, see

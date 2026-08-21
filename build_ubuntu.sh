@@ -6,7 +6,7 @@ LOWFI_BINARY="lowfi-linux-x86_64"
 wget "https://github.com/talwat/lowfi/releases/download/${lowfi_VERSION}/${LOWFI_BINARY}"
 chmod +x "${LOWFI_BINARY}"
 
-declare -a arr=("jammy" "noble" "questing")
+declare -a arr=("jammy" "noble" "questing" "resolute")
 for i in "${arr[@]}"
 do
   UBUNTU_DIST=$i

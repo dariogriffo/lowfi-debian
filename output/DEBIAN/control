@@ -6,6 +6,6 @@ Homepage: https://github.com/talwat/lowfi
 Package: lowfi
 Version: lowfi_VERSION-BUILD_VERSION~DIST
 Architecture: amd64
-Depends: 
+Depends: libc6 (>= 2.38), libasound2t64 | libasound2, libgcc-s1
 Description: An extremely simple lofi player.
 
