@@ -53,7 +53,7 @@ install on Debian. If you're looking for the lowfi source code, see
 
 ### The Debian way
 
-> ⚠️ **From 1 October 2026, apt access requires a yearly subscription**
+> ⚠️ **apt access requires a yearly subscription**
 > ([deb.griffo.io](https://deb.griffo.io)). To use this tool for free, download
 > the .deb from the [Releases](https://github.com/dariogriffo/lowfi-debian/releases) page
 > and install it manually (see below).
